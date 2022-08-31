@@ -1,8 +1,6 @@
 package com.neet.easy;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ValidAnagram_242 {
 
@@ -34,8 +32,8 @@ public class ValidAnagram_242 {
 
 
     /*
-    * Runtime: 10 ms, faster than 35.95% of Java online submissions for Valid Anagram.
-    Memory Usage: 45.1 MB, less than 31.58% of Java online submissions for Valid Anagram.
+    * Runtime: 6 ms, faster than 60.23% of Java online submissions for Valid Anagram.
+    Memory Usage: 44.6 MB, less than 41.71% of Java online submissions for Valid Anagram.
 * */
 
     public boolean isAnagramStringCompare(String s, String t){
@@ -53,11 +51,7 @@ public class ValidAnagram_242 {
         Arrays.sort(sortedT);
         t = new String(sortedT);
 
-        if(s.equals(t)){
-            return true;
-        }else {
-            return false;
-        }
+        return s.equals(t);
     }
 
     public static void main(String[] args) {
