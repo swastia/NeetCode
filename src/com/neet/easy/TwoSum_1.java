@@ -1,4 +1,4 @@
-package com.neet;
+package com.neet.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
