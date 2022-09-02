@@ -54,6 +54,22 @@ public class ValidAnagram_242 {
         return s.equals(t);
     }
 
+
+    public boolean isAnagramFastest(String s, String t) {
+        if (s.length() != t.length()) return false;
+
+        int[] store = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+            store[s.charAt(i) - 'a']++;
+            store[t.charAt(i) - 'a']--;
+        }
+
+        for (int n : store) if (n != 0) return false;
+
+        return true;
+    }
+
     public static void main(String[] args) {
         ValidAnagram_242 anagram = new ValidAnagram_242();
         System.out.println(anagram.isAnagram("anagram", "nagaram"));
@@ -65,6 +81,12 @@ public class ValidAnagram_242 {
         System.out.println(anagram.isAnagramStringCompare("anagram", "nagaram"));
         System.out.println(anagram.isAnagramStringCompare("swasti", "Swasti"));
         System.out.println(anagram.isAnagramStringCompare("cat", "rat"));
+
+        System.out.println("\n");
+
+        System.out.println(anagram.isAnagramFastest("anagram", "nagaram"));
+        System.out.println(anagram.isAnagramFastest("malayalam", "malayalam"));
+        System.out.println(anagram.isAnagramFastest("cat", "rat"));
 
     }
 }
