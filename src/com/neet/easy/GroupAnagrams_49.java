@@ -18,8 +18,8 @@ import java.util.*;
 public class GroupAnagrams_49 {
 
 
-    /*Runtime: 9 ms, faster than 89.91% of Java online submissions for Group Anagrams.
-Memory Usage: 57.2 MB, less than 27.90% of Java online submissions for Group Anagrams.
+    /*Runtime: 8 ms, faster than 90.90% of Java online submissions for Group Anagrams.
+Memory Usage: 56.9 MB, less than 32.12% of Java online submissions for Group Anagrams.
 */
     public List<List<String>> groupAnagrams01(String[] strs) {
         List<List<String>> result = new ArrayList<>();
@@ -38,7 +38,7 @@ Memory Usage: 57.2 MB, less than 27.90% of Java online submissions for Group Ana
                 hash[ch - 'a']++;
             }
             String key = new String(hash);
-            mapSublist.computeIfAbsent(key, k -> new ArrayList<String>());
+            mapSublist.computeIfAbsent(key, k -> new ArrayList<>());
             mapSublist.get(key).add(str);
         }
 
@@ -50,6 +50,7 @@ Memory Usage: 57.2 MB, less than 27.90% of Java online submissions for Group Ana
     public static void main(String[] args) {
         GroupAnagrams_49 anagrams = new GroupAnagrams_49();
         System.out.println(anagrams.groupAnagrams01(new String[]{"eat","tea","tan","ate","nat","bat"}));
+        System.out.println(anagrams.groupAnagrams01(new String[]{"a"}));
         System.out.println(anagrams.groupAnagrams01(new String[]{}));
     }
 }
