@@ -17,20 +17,22 @@ public class ValidParantheses_20 {
         // if any character in the string is not a bracket, string is invalid - (,),{,},[,]
         for(int i=0; i<s.toCharArray().length; i++){
             char current = s.charAt(i);
-            if (stack.isEmpty() && (current == ')' || current == '}' || current == ']')){
-                return false;
-            } else if(!stack.isEmpty()){
-                if(stack.peek() == '(' && current == ')'){
-                    stack.pop();
-                } else if(stack.peek() == '{' && current == '}'){
-                    stack.pop();
-                } else if(stack.peek() == '[' && current == ']'){
-                    stack.pop();
+            if (!stack.isEmpty() || (current != ')' && current != '}' && current != ']')) {
+                if(!stack.isEmpty()){
+                    if(stack.peek() == '(' && current == ')'){
+                        stack.pop();
+                    } else if(stack.peek() == '{' && current == '}'){
+                        stack.pop();
+                    } else if(stack.peek() == '[' && current == ']'){
+                        stack.pop();
+                    } else{
+                        stack.push(current);
+                    }
                 } else{
                     stack.push(current);
                 }
-            } else{
-                stack.push(current);
+            } else {
+                return false;
             }
 
         }
@@ -39,8 +41,8 @@ public class ValidParantheses_20 {
 
     public static void main(String[] args) {
         ValidParantheses_20 parentheses = new ValidParantheses_20();
-        System.out.println(parentheses.isValid(new String("()[]{}")));
-        System.out.println(parentheses.isValid(new String("()[]{}}")));
-        System.out.println(parentheses.isValid(new String(")[]{}")));
+        System.out.println(parentheses.isValid("()[]{}"));
+        System.out.println(parentheses.isValid("()[]{}}"));
+        System.out.println(parentheses.isValid(")[]{}"));
     }
 }
