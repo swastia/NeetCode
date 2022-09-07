@@ -1,9 +1,6 @@
 package com.neet.easy;
 
-import java.util.LinkedList;
-import java.util.List;
-
-public class ReverseLinkedList {
+public class ReverseLinkedList_206 {
 
     /**
      * Definition for singly-linked list.
@@ -45,12 +42,12 @@ Memory Usage: 41.8 MB, less than 95.49% of Java online submissions for Reverse L
     }
 
     public static void main(String[] args) {
-        ReverseLinkedList linkedList = new ReverseLinkedList();
-        ReverseLinkedList.ListNode node5 = linkedList.new ListNode(5);
-        ReverseLinkedList.ListNode node4 = linkedList.new ListNode(4, node5);
-        ReverseLinkedList.ListNode node3 = linkedList.new ListNode(3, node4);
-        ReverseLinkedList.ListNode node2 = linkedList.new ListNode(2, node3);
-        ReverseLinkedList.ListNode node1 = linkedList.new ListNode(1, node2);
+        ReverseLinkedList_206 linkedList = new ReverseLinkedList_206();
+        ReverseLinkedList_206.ListNode node5 = linkedList.new ListNode(5);
+        ReverseLinkedList_206.ListNode node4 = linkedList.new ListNode(4, node5);
+        ReverseLinkedList_206.ListNode node3 = linkedList.new ListNode(3, node4);
+        ReverseLinkedList_206.ListNode node2 = linkedList.new ListNode(2, node3);
+        ReverseLinkedList_206.ListNode node1 = linkedList.new ListNode(1, node2);
 
         ListNode result = linkedList.reverseList(node1);
         System.out.println(result.val + "-> " + result.next.val);
