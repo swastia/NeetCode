@@ -26,6 +26,11 @@ public class ReverseLinkedListRecursion {
         }
     }
 
+    /*Runtime: 0 ms, faster than 100.00% of Java online submissions for Reverse Linked List.
+Memory Usage: 42.1 MB, less than 88.66% of Java online submissions for Reverse Linked
+*/
+
+    // Speed is the same, but space usage has increased due to stack calls in memory
 
     private ListNode reverseListRecursion(ListNode head){
         //base case
